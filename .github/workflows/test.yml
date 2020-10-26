@@ -7,6 +7,15 @@ on: # rebuild any PRs and main branch changes
       - 'releases/*'
 
 jobs:
+  
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use current action
+        uses: getsentry/action-eslint-fix@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          dry: true
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
