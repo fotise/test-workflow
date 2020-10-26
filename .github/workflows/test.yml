@@ -11,8 +11,8 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - name: Use current action
-        uses: getsentry/action-eslint-fix@v1
+      - name: Use eslint-fix
+        uses: getsentry/action-eslint-fix@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           dry: true
