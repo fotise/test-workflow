@@ -16,6 +16,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pattern: '*.ts'
+          config:  eslintrc.json
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
