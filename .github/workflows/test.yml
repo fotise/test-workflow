@@ -1,34 +1,20 @@
-name: 'build-test'
-on: # rebuild any PRs and main branch changes
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-      - 'releases/*'
+name: Say hello!
 
+# GitHub Actions Workflows are automatically triggered by GitHub events
+on:
+  # For this workflow, we're using the workflow_dispatch event which is triggered when the user clicks Run workflow in the GitHub Actions UI
+  workflow_dispatch:
+    # The workflow_dispatch event accepts optional inputs so you can customize the behavior of the workflow
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'World'
+# When the event is triggered, GitHub Actions will run the jobs indicated
 jobs:
-  
-  quality:
+  say_hello:
+    # Uses a ubuntu-lates runner to complete the requested steps
     runs-on: ubuntu-latest
     steps:
-      - name: mooyoul tslint
-        uses: mooyoul/tslint-actions@v1.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: '*.ts'
-          config:  ./eslintrc.json
-  build: # make sure build/ci work properly
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: |
-          npm install
-      - run: |
-          npm run all
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./
-        with:
-          milliseconds: 1000
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
