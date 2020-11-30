@@ -4,7 +4,7 @@
 | -- | -- | -- | -- | -- |
 | [Section with green status](#-Section-with-green-status-query) | `incident-repair`, `short-term` | 10 | 0 | 💚🥳 |
 | [Section with yellow status](#-Section-with-yellow-status-query) | `needs-triage` | 2 | 0 | 💚🥳 |
-| [Section with red status](#-Section-with-red-status-query) | `bug` | 1 | 0 | 💚🥳 |
+| [Section with red status](#-Section-with-red-status-query) | `bug` | 1 | 1 | 💛😬 |
 ## Details
 ### 💚🥳 Section with green status [(query)](https://github.com/fotise/test-workflow/issues?q=is%3Aissue+is%3Aopen+label%3Aincident-repair+label%3Ashort-term)
 Total: 0
@@ -24,8 +24,8 @@ Labels: `needs-triage`
 
 | Owner | Count |
 | -- | -- |
-### 💚🥳 Section with red status [(query)](https://github.com/fotise/test-workflow/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
-Total: 0
+### 💛😬 Section with red status [(query)](https://github.com/fotise/test-workflow/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+Total: 1
 
 Threshold: 1
 
@@ -33,3 +33,4 @@ Labels: `bug`
 
 | Owner | Count |
 | -- | -- |
+| [**Unassigned**](https://github.com/fotise/test-workflow/issues?q=is%3Aissue+is%3Aopen+label%3Abug+no%3Aassignee) | 1 |
