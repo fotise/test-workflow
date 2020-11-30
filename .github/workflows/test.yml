@@ -48,7 +48,7 @@ jobs:
           git commit -m "Update $OUTPUT_FILE_NAME"
           git push github HEAD:${GITHUB_REF}
         fi
-  generate dashboard:
+  generate_dashboard:
     runs-on: ubuntu-latest
 
     steps:
